@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_navigation_links",
+  "info": {
+    "displayName": "Link",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "variant": {
+      "type": "enumeration",
+      "enum": [
+        "text",
+        "outlined",
+        "contained"
+      ],
+      "default": "text"
+    }
+  }
+}
