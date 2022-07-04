@@ -48,6 +48,7 @@ module.exports = createCoreController("api::home.home", ({ strapi }) => ({
           populate: {
             logo: true,
             links: true,
+            socials: true,
           },
         },
       },

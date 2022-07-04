@@ -41,7 +41,7 @@ const HighlightWithBackground = ({ title, description, background }) => {
         alignItems='center'
         justifyContent='end'
         sx={{
-          background: `center / contain no-repeat url("${background.url}")`,
+          background: `center / cover no-repeat url("${background.url}")`,
         }}>
         <Typography variant='h2'>{title}</Typography>
         <Typography variant='body1' component='p'>

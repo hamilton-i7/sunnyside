@@ -6,7 +6,7 @@ import { getStrapiMedia } from '../lib/media'
 
 const Testimonials = ({ heading, testimonials }) => {
   return (
-    <Stack>
+    <Stack component='section'>
       <Typography component='h2' variant='h3'>
         {heading}
       </Typography>

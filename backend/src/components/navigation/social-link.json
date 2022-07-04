@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_navigation_social_links",
+  "info": {
+    "displayName": "Social link",
+    "icon": "mouse-pointer"
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "string",
+      "default": "#"
+    },
+    "name": {
+      "type": "enumeration",
+      "enum": [
+        "facebook",
+        "instagram",
+        "twitter",
+        "pinterest"
+      ]
+    }
+  }
+}
