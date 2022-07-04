@@ -3,6 +3,7 @@ import { breakpoints } from './globals'
 
 const lightTheme = createTheme({
   breakpoints,
+  spacing: factor => `${0.8 * factor}rem`,
   palette: {
     mode: 'light',
     primary: {
@@ -27,7 +28,9 @@ const lightTheme = createTheme({
     fontFamily: ['Barlow', 'sans-serif'].join(','),
     h1: {
       fontFamily: 'Fraunces',
+      fontSize: '2.8rem',
       fontWeight: 900,
+      letterSpacing: '0.5rem',
     },
     h2: {
       fontFamily: 'Fraunces',

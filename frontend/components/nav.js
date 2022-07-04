@@ -23,10 +23,22 @@ const Nav = ({ menu }) => {
   }
 
   return (
-    <AppBar>
-      <Toolbar>
+    <AppBar
+      component='nav'
+      elevation={0}
+      sx={{
+        background: 'none',
+      }}>
+      <Toolbar
+        sx={{
+          justifyContent: 'space-between',
+        }}>
         <Link href='#'>
-          <MuiLink>
+          <MuiLink
+            sx={{
+              maxWidth: '10.2rem',
+              width: '20%',
+            }}>
             <Box component='img' src={logo.url} alt={logo.alternativeText} />
           </MuiLink>
         </Link>
@@ -37,7 +49,7 @@ const Nav = ({ menu }) => {
             aria-label='menu'
             aria-haspopup='true'
             onClick={handleMenu}>
-            <MenuIcon />
+            <MenuIcon sx={{ color: theme => theme.palette.common.white }} />
           </IconButton>
           <Menu
             id='menu-appbar'

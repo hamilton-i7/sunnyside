@@ -12,6 +12,7 @@ const Home = ({ content }) => {
     seo,
     nav,
     heading,
+    heroIcon,
     heroImageMobile,
     highlights,
     clientTestimonials,
@@ -19,11 +20,17 @@ const Home = ({ content }) => {
     footer,
   } = content.attributes
   const heroMobile = getStrapiMedia(heroImageMobile)
+  const heroIconObj = getStrapiMedia(heroIcon)
 
   return (
     <>
       <Seo seo={seo} />
-      <Header heading={heading} hero={heroMobile} menu={nav} />
+      <Header
+        heading={heading}
+        hero={heroMobile}
+        icon={heroIconObj}
+        menu={nav}
+      />
       <Highlights highlights={highlights} />
       <Testimonials
         heading={clientTestimonials.heading}

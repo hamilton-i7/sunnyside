@@ -77,6 +77,13 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "heroIcon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
