@@ -13,12 +13,6 @@ const MyApp = ({ Component, pageProps }) => {
     <>
       <Head>
         <link rel='icon' href={getStrapiMedia(global.attributes.favicon)} />
-        <link rel='preconnect' href='https://fonts.googleapis.com' />
-        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
-        <link
-          href='https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap'
-          rel='stylesheet'
-        />
       </Head>
       <GlobalContext.Provider value={global.attributes}>
         <Component {...pageProps} />

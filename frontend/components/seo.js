@@ -1,12 +1,13 @@
 import Head from 'next/head'
 import React, { useContext } from 'react'
+import { getStrapiMedia } from '../lib/media'
 import { GlobalContext } from '../pages/_app'
 
 const Seo = ({ seo }) => {
   const { siteName, shareImage } = useContext(GlobalContext)
   const fullSeo = {
     siteName,
-    shareImage,
+    shareImage: getStrapiMedia(shareImage),
     ...seo,
   }
 
