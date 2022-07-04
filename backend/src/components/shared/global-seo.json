@@ -1,7 +1,8 @@
 {
   "collectionName": "components_shared_global_seos",
   "info": {
-    "displayName": "Global SEO"
+    "displayName": "Global SEO",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -9,9 +10,13 @@
       "type": "string",
       "required": true
     },
-    "language": {
-      "type": "string",
-      "default": "en"
+    "favicon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }
