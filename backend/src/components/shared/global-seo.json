@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_global_seos",
+  "info": {
+    "displayName": "Global SEO"
+  },
+  "options": {},
+  "attributes": {
+    "siteName": {
+      "type": "string",
+      "required": true
+    },
+    "language": {
+      "type": "string",
+      "default": "en"
+    }
+  }
+}

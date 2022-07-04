@@ -4,7 +4,8 @@
   "info": {
     "singularName": "home",
     "pluralName": "homes",
-    "displayName": "Home"
+    "displayName": "Home",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -30,25 +31,35 @@
       "repeatable": true,
       "component": "page.highlight"
     },
-    "testimonies": {
-      "displayName": "Testimony",
-      "type": "component",
-      "repeatable": true,
-      "component": "page.testimony"
-    },
-    "gallery": {
-      "allowedTypes": [
-        "images"
-      ],
+    "galleryMobile": {
       "type": "media",
       "multiple": true,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "footer": {
       "displayName": "Footer",
       "type": "component",
       "repeatable": false,
       "component": "page.footer"
+    },
+    "clientTestimonials": {
+      "displayName": "Client Testimonials",
+      "type": "component",
+      "repeatable": false,
+      "component": "page.client-testimonials"
+    },
+    "galleryDesktop": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }
