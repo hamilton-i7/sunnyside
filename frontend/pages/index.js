@@ -1,3 +1,4 @@
+import { Typography } from '@mui/material'
 import Seo from '../components/seo'
 import { fetchAPI } from '../lib/api'
 
@@ -6,7 +7,7 @@ const Home = ({ content }) => {
   return (
     <>
       <Seo seo={seo} />
-      <h1>Hello Next</h1>
+      <Typography variant='h1'>Hello Next</Typography>
     </>
   )
 }
