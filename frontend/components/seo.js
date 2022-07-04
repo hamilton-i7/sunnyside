@@ -20,8 +20,8 @@ const Seo = ({ seo }) => {
       <meta name='description' content={fullSeo.description} />
       <meta property='og:description' content={fullSeo.description} />
 
-      <meta name='image' content={fullSeo.shareImage} />
-      <meta property='og:image' content={fullSeo.shareImage} />
+      <meta name='image' content={fullSeo.shareImage.url} />
+      <meta property='og:image' content={fullSeo.shareImage.url} />
 
       <meta property='og:type' content={fullSeo.type} />
       <meta property='og:url' content={fullSeo.url} />
