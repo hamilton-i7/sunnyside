@@ -12,11 +12,24 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "defaultSeo": {
-      "displayName": "Global SEO",
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.global-seo"
+    "siteName": {
+      "type": "string",
+      "required": true
+    },
+    "favicon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "shareImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

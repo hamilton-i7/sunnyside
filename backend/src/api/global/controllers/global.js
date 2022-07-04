@@ -13,11 +13,8 @@ module.exports = createCoreController("api::global.global", ({ strapi }) => ({
     const entity = await strapi.entityService.findMany("api::global.global", {
       ...query,
       populate: {
-        defaultSeo: {
-          populate: {
-            favicon: true,
-          },
-        },
+        favicon: true,
+        shareImage: true,
       },
     });
 

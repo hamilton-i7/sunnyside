@@ -10,7 +10,9 @@ export const getStrapiURL = (path = '') =>
 
 export const fetchAPI = async path => {
   try {
-    const { data } = await axios.get(getStrapiURL(`/api${path}`))
+    const {
+      data: { data },
+    } = await axios.get(getStrapiURL(`/api${path}`))
     return data
   } catch (error) {
     console.log(error)
