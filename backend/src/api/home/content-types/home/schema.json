@@ -52,14 +52,30 @@
       "component": "page.client-testimonials"
     },
     "galleryDesktop": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
+      ]
+    },
+    "heroImageMobile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "heroImageDesktop": {
+      "allowedTypes": [
+        "images"
       ],
       "type": "media",
-      "multiple": true
+      "multiple": false
     }
   }
 }

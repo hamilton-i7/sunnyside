@@ -50,6 +50,10 @@ const lightTheme = createTheme({
       fontFamily: 'Fraunces',
       fontWeight: 700,
     },
+    caption: {
+      fontFamily: 'Barlow',
+      fontWeight: 600,
+    },
   },
 })
 

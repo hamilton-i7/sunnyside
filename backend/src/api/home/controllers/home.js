@@ -24,6 +24,8 @@ module.exports = createCoreController("api::home.home", ({ strapi }) => ({
             links: true,
           },
         },
+        heroImageMobile: true,
+        heroImageDesktop: true,
         highlights: {
           populate: {
             cta: true,
