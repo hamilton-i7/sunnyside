@@ -59,9 +59,23 @@ const HighlightWithImage = ({ highlight, sx }) => {
         <Box component='img' src={image.url} alt={image.alternativeText} />
       </Grid>
       <Grid item xs={12} lg={6}>
-        <Stack alignItems='center' justifyContent='center'>
-          <Typography variant='h2'>{title}</Typography>
-          <Typography variant='body1' component='p'>
+        <Stack
+          sx={{
+            alignItems: 'center',
+            gap: '2.4rem',
+            justifyContent: 'center',
+            padding: '6rem 3rem',
+            textAlign: 'center',
+          }}>
+          <Typography
+            variant='h2'
+            sx={{ color: theme => theme.palette.neutral.darkBlue }}>
+            {title}
+          </Typography>
+          <Typography
+            variant='body1'
+            component='p'
+            sx={{ color: theme => theme.palette.neutral.darkDrayishBlue }}>
             {description}
           </Typography>
           <TextButton underlineColor={color} href={cta.url}>

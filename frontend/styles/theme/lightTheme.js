@@ -38,6 +38,7 @@ const lightTheme = createTheme({
     },
     h3: {
       fontFamily: 'Fraunces',
+      fontSize: '3rem',
       fontWeight: 900,
     },
     body1: {

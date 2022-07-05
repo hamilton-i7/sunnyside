@@ -17,16 +17,17 @@ export const TextButton = styled(Button, {
   shouldForwardProp: prop => prop !== 'underlineColor',
 })(({ underlineColor, theme }) => ({
   color: theme.palette.neutral.darkBlue,
+  fontSize: '1.6rem',
   '&::after': {
     borderRadius: '0.8rem',
-    bottom: '0.9rem',
+    bottom: '0.5em',
     content: '""',
-    height: '0.4rem',
+    height: '0.5em',
     left: '50%',
     position: 'absolute',
     transform: 'translateX(-50%)',
     transition: `background-color ${theme.transitions.duration.short}ms`,
-    width: '90%',
+    width: '96%',
     zIndex: -1,
   },
   ...(underlineColor && {
