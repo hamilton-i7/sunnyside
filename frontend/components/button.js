@@ -25,20 +25,20 @@ export const TextButton = styled(Button, {
     left: '50%',
     position: 'absolute',
     transform: 'translateX(-50%)',
+    transition: `background-color ${theme.transitions.duration.short}ms`,
     width: '90%',
     zIndex: -1,
-    ...(underlineColor && {
+  },
+  ...(underlineColor && {
+    ':hover': {
+      backgroundColor: alpha(theme.palette[underlineColor].main, 0.04),
+      '&::after': {
+        backgroundColor: alpha(theme.palette[underlineColor].main, 1),
+      },
+    },
+    '::after': {
       backgroundColor: alpha(theme.palette[underlineColor].main, 0.4),
-    }),
-  },
-  ':hover': {
-    backgroundColor: alpha(theme.palette[underlineColor].main, 0.04),
-    transition: 'background-color 250ms',
-  },
-  ':hover::after': {
-    ...(underlineColor && {
-      backgroundColor: alpha(theme.palette[underlineColor].main, 1),
-      transition: 'background-color 250ms',
-    }),
-  },
+      transition: `background-color ${theme.transitions.duration.short}ms`,
+    },
+  }),
 }))
