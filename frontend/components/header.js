@@ -1,7 +1,6 @@
 import React from 'react'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
-import Toolbar from '@mui/material/Toolbar'
 import Box from '@mui/material/Box'
 import Nav from './nav'
 
@@ -15,7 +14,6 @@ const Header = ({ heading, hero, icon, menu }) => {
         height: '44rem',
       }}>
       <Nav menu={menu} />
-      <Toolbar />
       <Typography
         variant='h1'
         sx={{
