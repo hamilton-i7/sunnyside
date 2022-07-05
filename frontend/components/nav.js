@@ -50,8 +50,10 @@ const Nav = ({ menu }) => {
             aria-label='menu'
             aria-haspopup='true'
             onClick={handleMenu}>
+            {/* TODO: Increase icon size */}
             <MenuIcon sx={{ color: theme => theme.palette.common.white }} />
           </IconButton>
+          {/* TODO: Add sharp corner */}
           <Menu
             id='menu-appbar'
             elevation={2}

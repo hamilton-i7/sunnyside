@@ -39,6 +39,13 @@
     "imageAsBackground": {
       "type": "boolean",
       "default": false
+    },
+    "color": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary"
+      ]
     }
   }
 }

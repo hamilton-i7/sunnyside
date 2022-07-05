@@ -4,24 +4,18 @@ import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import { getStrapiMedia } from '../lib/media'
+import { TextButton } from './button'
 
 const Highlights = ({ highlights }) => {
   return (
     <Grid container component='main'>
       {highlights.map((highlight, index) =>
         highlight.imageAsBackground ? (
-          <HighlightWithBackground
-            key={highlight.id}
-            title={highlight.title}
-            description={highlight.description}
-            background={getStrapiMedia(highlight.imageMobile)}
-          />
+          <HighlightWithBackground key={highlight.id} highlight={highlight} />
         ) : (
           <HighlightWithImage
             key={highlight.id}
-            title={highlight.title}
-            description={highlight.description}
-            image={getStrapiMedia(highlight.imageMobile)}
+            highlight={highlight}
             sx={{
               flexDirection: { lg: index % 2 === 0 ? 'row-reverse' : 'row' },
             }}
@@ -34,14 +28,17 @@ const Highlights = ({ highlights }) => {
 
 export default Highlights
 
-const HighlightWithBackground = ({ title, description, background }) => {
+const HighlightWithBackground = ({ highlight }) => {
+  const { title, description, imageMobile } = highlight
+  const image = getStrapiMedia(imageMobile)
+
   return (
     <Grid item xs={12} lg={6}>
       <Stack
         alignItems='center'
         justifyContent='end'
         sx={{
-          background: `center / cover no-repeat url("${background.url}")`,
+          background: `center / cover no-repeat url("${image.url}")`,
         }}>
         <Typography variant='h2'>{title}</Typography>
         <Typography variant='body1' component='p'>
@@ -52,7 +49,10 @@ const HighlightWithBackground = ({ title, description, background }) => {
   )
 }
 
-const HighlightWithImage = ({ title, description, image, sx }) => {
+const HighlightWithImage = ({ highlight, sx }) => {
+  const { imageMobile, title, description, cta, color } = highlight
+  const image = getStrapiMedia(imageMobile)
+
   return (
     <Grid container item xs={12} sx={sx}>
       <Grid item xs={12} lg={6}>
@@ -64,6 +64,9 @@ const HighlightWithImage = ({ title, description, image, sx }) => {
           <Typography variant='body1' component='p'>
             {description}
           </Typography>
+          <TextButton underlineColor={color} href={cta.url}>
+            {cta.label}
+          </TextButton>
         </Stack>
       </Grid>
     </Grid>
