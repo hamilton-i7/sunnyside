@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_media_svgs",
+  "info": {
+    "displayName": "Svg",
+    "icon": "image",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "width": {
+      "type": "integer",
+      "required": true,
+      "min": 0
+    },
+    "height": {
+      "type": "integer",
+      "required": true,
+      "min": 0
+    },
+    "xmlns": {
+      "type": "string",
+      "default": "http://www.w3.org/2000/svg"
+    },
+    "path": {
+      "type": "text",
+      "required": true
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

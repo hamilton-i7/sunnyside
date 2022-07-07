@@ -41,7 +41,7 @@ const lightTheme = createTheme({
     },
     h3: {
       fontFamily: 'Fraunces',
-      fontSize: '3rem',
+      fontSize: '1.6rem',
       fontWeight: 900,
     },
     body1: {
@@ -51,7 +51,8 @@ const lightTheme = createTheme({
     },
     subtitle1: {
       fontFamily: 'Fraunces',
-      fontWeight: 700,
+      fontSize: '1.6rem',
+      fontWeight: 900,
     },
     button: {
       fontFamily: 'Fraunces',
@@ -60,6 +61,7 @@ const lightTheme = createTheme({
     },
     caption: {
       fontFamily: 'Barlow',
+      fontSize: '1.2rem',
       fontWeight: 600,
     },
   },

@@ -3,18 +3,24 @@ import FacebookIcon from '@mui/icons-material/Facebook'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import PinterestIcon from '@mui/icons-material/Pinterest'
+import IconButton from '@mui/material/IconButton'
 
-const SocialButton = ({ socialMedia }) => {
+const SocialButton = ({ socialMedia, url }) => {
+  let icon = ''
   switch (socialMedia) {
     case 'facebook':
-      return <FacebookIcon />
+      icon = <FacebookIcon fontSize='large' />
+      break
     case 'instagram':
-      return <InstagramIcon />
+      icon = <InstagramIcon fontSize='large' />
+      break
     case 'twitter':
-      return <TwitterIcon />
+      icon = <TwitterIcon fontSize='large' />
+      break
     default:
-      return <PinterestIcon />
+      icon = <PinterestIcon fontSize='large' />
   }
+  return <IconButton href={url}>{icon}</IconButton>
 }
 
 export default SocialButton

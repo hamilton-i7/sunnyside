@@ -8,7 +8,12 @@ import { TextButton } from './button'
 
 const Highlights = ({ highlights }) => {
   return (
-    <Grid container component='main'>
+    <Grid
+      container
+      component='main'
+      sx={{
+        textAlign: 'center',
+      }}>
       {highlights.map((highlight, index) =>
         highlight.imageAsBackground ? (
           <HighlightWithBackground key={highlight.id} highlight={highlight} />
@@ -43,7 +48,6 @@ const HighlightWithBackground = ({ highlight }) => {
           height: '60rem',
           justifyContent: 'end',
           padding: '6rem 3rem',
-          textAlign: 'center',
         }}>
         <Typography variant='h2'>{title}</Typography>
         <Typography variant='body1' component='p'>
@@ -70,7 +74,6 @@ const HighlightWithImage = ({ highlight, sx }) => {
             gap: '2.4rem',
             justifyContent: 'center',
             padding: '6rem 3rem',
-            textAlign: 'center',
           }}>
           <Typography
             variant='h2'
