@@ -43,3 +43,5 @@ export const TextButton = styled(Button, {
     },
   }),
 }))
+
+export const LinkButton = styled(Button)(({ theme }) => ({}))

@@ -1,8 +1,7 @@
 import React from 'react'
 import Stack from '@mui/material/Stack'
-import Typography from '@mui/material/Typography'
 import SocialButton from './socialButton'
-import Link from 'next/link'
+import Link from './link'
 import MuiLink from '@mui/material/Link'
 import Svg from './svg'
 import { useTheme } from '@mui/material'
@@ -34,8 +33,12 @@ const Footer = ({ footer }) => {
           <Link key={link.id} href={link.url}>
             <MuiLink
               underline='none'
-              sx={{ color: theme => theme.palette.complementary.dark }}>
-              <Typography variant='body1'>{link.label}</Typography>
+              variant='body1'
+              sx={{
+                color: theme => theme.palette.complementary.dark,
+                cursor: 'pointer',
+              }}>
+              {link.label}
             </MuiLink>
           </Link>
         ))}

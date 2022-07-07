@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'next/link'
+import Link from './link'
 import MuiLink from '@mui/material/Link'
 import Box from '@mui/material/Box'
 
