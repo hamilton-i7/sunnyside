@@ -4,13 +4,13 @@ import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import Nav from './nav'
 
-const Header = ({ heading, hero, icon, menu }) => {
+const Header = ({ heading, heroImage, icon, menu }) => {
   return (
     <Stack
       component='header'
       alignItems='center'
       sx={{
-        background: `bottom / cover no-repeat url("${hero.url}")`,
+        background: `bottom / cover no-repeat url("${heroImage.url}")`,
         height: '44rem',
       }}>
       <Nav menu={menu} />

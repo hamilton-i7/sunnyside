@@ -1,3 +1,4 @@
+import { useTheme } from '@mui/material'
 import Footer from '../components/footer'
 import Gallery from '../components/gallery'
 import Header from '../components/header'
@@ -6,6 +7,7 @@ import Seo from '../components/seo'
 import Testimonials from '../components/testimonials'
 import { fetchAPI } from '../lib/api'
 import { getStrapiMedia } from '../lib/media'
+import { useSmallScreenMatcher } from '../lib/responsive'
 
 const Home = ({ content }) => {
   const {
@@ -14,20 +16,25 @@ const Home = ({ content }) => {
     heading,
     heroIcon,
     heroImageMobile,
+    heroImageDesktop,
     highlights,
     clientTestimonials,
     galleryMobile,
     footer,
   } = content.attributes
   const heroMobile = getStrapiMedia(heroImageMobile)
+  const heroDesktop = getStrapiMedia(heroImageDesktop)
   const heroIconObj = getStrapiMedia(heroIcon)
+
+  const theme = useTheme()
+  const matchesSmallScreen = useSmallScreenMatcher(theme)
 
   return (
     <>
       <Seo seo={seo} />
       <Header
         heading={heading}
-        hero={heroMobile}
+        heroImage={matchesSmallScreen ? heroDesktop : heroMobile}
         icon={heroIconObj}
         menu={nav}
       />

@@ -49,7 +49,10 @@ const Nav = ({ menu }) => {
             color='inherit'
             aria-label='menu'
             aria-haspopup='true'
-            onClick={handleMenu}>
+            onClick={handleMenu}
+            sx={{
+              display: { sm: 'none' },
+            }}>
             {/* TODO: Increase icon size */}
             <MenuIcon sx={{ color: theme => theme.palette.common.white }} />
           </IconButton>
@@ -118,6 +121,42 @@ const Nav = ({ menu }) => {
             )}
           </Menu>
         </div>
+        <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
+          {menu.links.map(link =>
+            link.variant === 'contained' ? (
+              <ContainedButton
+                key={link.id}
+                component='li'
+                onClick={handleClose}
+                sx={{
+                  alignSelf: 'center',
+                  backgroundColor: theme => theme.palette.common.white,
+                  color: theme => theme.palette.tertiary.dark,
+                }}>
+                <Link href={link.url}>
+                  <Typography component='a' variant='button'>
+                    {link.label}
+                  </Typography>
+                </Link>
+              </ContainedButton>
+            ) : (
+              <MenuItem
+                key={link.id}
+                onClick={handleClose}
+                sx={{ justifyContent: 'center' }}>
+                <Link href={link.url}>
+                  <MuiLink
+                    underline='none'
+                    sx={{
+                      color: theme => theme.palette.common.white,
+                    }}>
+                    {link.label}
+                  </MuiLink>
+                </Link>
+              </MenuItem>
+            ),
+          )}
+        </Box>
       </Toolbar>
     </AppBar>
   )
