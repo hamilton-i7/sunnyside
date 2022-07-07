@@ -38,6 +38,9 @@ const lightTheme = createTheme({
       fontFamily: 'Fraunces',
       fontSize: '3rem',
       fontWeight: 900,
+      [`@media (min-width:${breakpoints.values.sm}px)`]: {
+        fontSize: '2.4rem',
+      },
     },
     h3: {
       fontFamily: 'Fraunces',
@@ -48,6 +51,9 @@ const lightTheme = createTheme({
       fontFamily: 'Barlow',
       fontWeight: 600,
       fontSize: '1.6rem',
+      [`@media (min-width:${breakpoints.values.sm}px)`]: {
+        fontSize: '1.4rem',
+      },
     },
     subtitle1: {
       fontFamily: 'Fraunces',

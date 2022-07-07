@@ -17,7 +17,7 @@ export const TextButton = styled(Button, {
   shouldForwardProp: prop => prop !== 'underlineColor',
 })(({ underlineColor, theme }) => ({
   color: theme.palette.tertiary.dark,
-  fontSize: '1.6rem',
+  fontSize: { xs: '1.6rem', sm: '1.2rem' },
   '&::after': {
     borderRadius: '0.8rem',
     bottom: '0.5em',

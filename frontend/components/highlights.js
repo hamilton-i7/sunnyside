@@ -5,25 +5,27 @@ import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import { getStrapiMedia } from '../lib/media'
 import { TextButton } from './button'
+import { useSmallScreenMatcher } from '../lib/responsive'
+import { useTheme } from '@mui/material'
 
 const Highlights = ({ highlights }) => {
+  const theme = useTheme()
+
   return (
-    <Grid
-      container
-      component='main'
-      sx={{
-        textAlign: 'center',
-      }}>
+    <Grid container component='main'>
       {highlights.map((highlight, index) =>
         highlight.imageAsBackground ? (
-          <HighlightWithBackground key={highlight.id} highlight={highlight} />
+          <HighlightWithBackground
+            key={highlight.id}
+            highlight={highlight}
+            theme={theme}
+          />
         ) : (
           <HighlightWithImage
             key={highlight.id}
             highlight={highlight}
-            sx={{
-              flexDirection: { lg: index % 2 === 0 ? 'row-reverse' : 'row' },
-            }}
+            index={index}
+            theme={theme}
           />
         ),
       )}
@@ -33,24 +35,37 @@ const Highlights = ({ highlights }) => {
 
 export default Highlights
 
-const HighlightWithBackground = ({ highlight }) => {
-  const { title, description, imageMobile, color } = highlight
-  const image = getStrapiMedia(imageMobile)
+const HighlightWithBackground = ({ highlight, theme }) => {
+  const matchesSmallScreen = useSmallScreenMatcher(theme)
+
+  const { title, description, imageMobile, imageDesktop, color } = highlight
+  const image = matchesSmallScreen
+    ? getStrapiMedia(imageDesktop)
+    : getStrapiMedia(imageMobile)
 
   return (
-    <Grid item xs={12} lg={6}>
+    <Grid item xs={12} sm={6}>
       <Stack
         sx={{
           alignItems: 'center',
           background: `center / cover no-repeat url("${image.url}")`,
           color: theme => theme.palette[color].dark,
           gap: '2.4rem',
-          height: '60rem',
+          height: { xs: '60rem', sm: '40rem' },
           justifyContent: 'end',
-          padding: '6rem 3rem',
+          padding: { xs: '6rem 3rem', sm: '6rem 2rem' },
+          textAlign: 'center',
         }}>
         <Typography variant='h2'>{title}</Typography>
-        <Typography variant='body1' component='p'>
+        <Typography
+          variant='body1'
+          component='p'
+          sx={{
+            display: '-webkit-box',
+            overflow: 'hidden',
+            WebkitBoxOrient: 'vertical',
+            WebkitLineClamp: 3,
+          }}>
           {description}
         </Typography>
       </Stack>
@@ -58,22 +73,34 @@ const HighlightWithBackground = ({ highlight }) => {
   )
 }
 
-const HighlightWithImage = ({ highlight, sx }) => {
-  const { imageMobile, title, description, cta, color } = highlight
-  const image = getStrapiMedia(imageMobile)
+const HighlightWithImage = ({ highlight, index, theme }) => {
+  const matchesSmallScreen = useSmallScreenMatcher(theme)
+
+  const { title, description, imageMobile, imageDesktop, color, cta } =
+    highlight
+  const image = matchesSmallScreen
+    ? getStrapiMedia(imageDesktop)
+    : getStrapiMedia(imageMobile)
 
   return (
-    <Grid container item xs={12} sx={sx}>
-      <Grid item xs={12} lg={6}>
+    <Grid
+      container
+      item
+      xs={12}
+      sx={{
+        flexDirection: { sm: index % 2 === 0 ? 'row-reverse' : 'row' },
+        textAlign: { xs: 'center', sm: 'start' },
+      }}>
+      <Grid item xs={12} sm={6}>
         <Box component='img' src={image.url} alt={image.alternativeText} />
       </Grid>
-      <Grid item xs={12} lg={6}>
+      <Grid item xs={12} sm={6}>
         <Stack
           sx={{
-            alignItems: 'center',
-            gap: '2.4rem',
+            alignItems: { xs: 'center', sm: 'start' },
+            gap: { xs: '2.4rem', sm: '0.5rem' },
             justifyContent: 'center',
-            padding: '6rem 3rem',
+            padding: { xs: '6rem 3rem', sm: '2rem 1.6rem' },
           }}>
           <Typography
             variant='h2'
