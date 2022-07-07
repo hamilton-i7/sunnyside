@@ -29,16 +29,21 @@ const Highlights = ({ highlights }) => {
 export default Highlights
 
 const HighlightWithBackground = ({ highlight }) => {
-  const { title, description, imageMobile } = highlight
+  const { title, description, imageMobile, color } = highlight
   const image = getStrapiMedia(imageMobile)
 
   return (
     <Grid item xs={12} lg={6}>
       <Stack
-        alignItems='center'
-        justifyContent='end'
         sx={{
+          alignItems: 'center',
           background: `center / cover no-repeat url("${image.url}")`,
+          color: theme => theme.palette[color].dark,
+          gap: '2.4rem',
+          height: '60rem',
+          justifyContent: 'end',
+          padding: '6rem 3rem',
+          textAlign: 'center',
         }}>
         <Typography variant='h2'>{title}</Typography>
         <Typography variant='body1' component='p'>
@@ -69,7 +74,7 @@ const HighlightWithImage = ({ highlight, sx }) => {
           }}>
           <Typography
             variant='h2'
-            sx={{ color: theme => theme.palette.neutral.darkBlue }}>
+            sx={{ color: theme => theme.palette.tertiary.dark }}>
             {title}
           </Typography>
           <Typography

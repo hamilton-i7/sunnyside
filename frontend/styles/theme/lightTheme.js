@@ -14,11 +14,13 @@ const lightTheme = createTheme({
     },
     tertiary: {
       main: 'hsl(198, 62%, 26%)',
-      light: 'hsl(168, 34%, 41%)',
+      dark: 'hsl(212, 27%, 19%)',
+    },
+    complementary: {
+      main: 'hsl(168, 34%, 41%)',
       dark: 'hsl(167, 40%, 24%)',
     },
     neutral: {
-      darkBlue: 'hsl(212, 27%, 19%)',
       veryDarkGrayishBlue: 'hsl(213, 9%, 39%)',
       darkDrayishBlue: 'hsl(232, 10%, 55%)',
       grayishBlue: 'hsl(210, 4%, 67%)',
@@ -28,12 +30,13 @@ const lightTheme = createTheme({
     fontFamily: ['Barlow', 'sans-serif'].join(','),
     h1: {
       fontFamily: 'Fraunces',
-      fontSize: '2.8rem',
+      fontSize: '3.6rem',
       fontWeight: 900,
       letterSpacing: '0.5rem',
     },
     h2: {
       fontFamily: 'Fraunces',
+      fontSize: '3rem',
       fontWeight: 900,
     },
     h3: {

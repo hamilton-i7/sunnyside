@@ -18,7 +18,7 @@ const Header = ({ heading, hero, icon, menu }) => {
         variant='h1'
         sx={{
           color: theme => theme.palette.common.white,
-          m: theme => `5rem ${theme.spacing(2)} 4rem`,
+          m: theme => `3rem ${theme.spacing(2)} 4rem`,
           textAlign: 'center',
           textTransform: 'uppercase',
         }}>

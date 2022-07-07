@@ -6,7 +6,7 @@ export const ContainedButton = styled(Button, {
 })(({ neutral, theme }) => ({
   backgroundColor: theme.palette.secondary.main,
   borderRadius: '2em',
-  color: theme.palette.neutral.darkBlue,
+  color: theme.palette.tertiary.dark,
   padding: '1.2rem 2.8rem',
   ...(neutral && {
     backgroundColor: theme.palette.common.white,
@@ -16,7 +16,7 @@ export const ContainedButton = styled(Button, {
 export const TextButton = styled(Button, {
   shouldForwardProp: prop => prop !== 'underlineColor',
 })(({ underlineColor, theme }) => ({
-  color: theme.palette.neutral.darkBlue,
+  color: theme.palette.tertiary.dark,
   fontSize: '1.6rem',
   '&::after': {
     borderRadius: '0.8rem',
