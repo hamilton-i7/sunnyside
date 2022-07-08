@@ -1,4 +1,4 @@
-module.exports = [
+module.exports = () => [
   "strapi::errors",
   {
     name: "strapi::security",
