@@ -10,7 +10,7 @@ const Testimonials = ({ heading, testimonials }) => {
       component='section'
       sx={{
         gap: '4rem',
-        padding: '6rem 3rem',
+        padding: '6rem 12rem',
         textAlign: 'center',
       }}>
       <Typography

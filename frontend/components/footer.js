@@ -43,7 +43,7 @@ const Footer = ({ footer }) => {
           </Link>
         ))}
       </Stack>
-      <Stack direction='row' sx={{ mt: '5rem', gap: '2rem' }}>
+      <Stack direction='row' sx={{ mt: '5rem', gap: '1rem' }}>
         {footer.socials.map(social => (
           <SocialButton
             key={social.id}

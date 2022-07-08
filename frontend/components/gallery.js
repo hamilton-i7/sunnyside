@@ -9,7 +9,7 @@ const Gallery = ({ images }) => {
       {images.map(image => {
         const imageObj = getStrapiMedia(image, true)
         return (
-          <Grid item key={image.id} xs={6}>
+          <Grid item key={image.id} xs={6} sm={3}>
             <Box
               component='img'
               src={imageObj.url}
