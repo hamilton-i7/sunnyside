@@ -40,8 +40,9 @@ const HighlightWithBackground = ({ highlight, theme }) => {
 
   const { title, description, imageMobile, imageDesktop, color } = highlight
   const image = matchesSmallScreen
-    ? getStrapiMedia(imageDesktop)
-    : getStrapiMedia(imageMobile)
+    ? getStrapiMedia(imageDesktop, false, true)
+    : getStrapiMedia(imageMobile, false, true)
+  const containerWidth = 100
 
   return (
     <Grid item xs={12} sm={6}>
@@ -53,7 +54,7 @@ const HighlightWithBackground = ({ highlight, theme }) => {
             sm: `center / contain no-repeat url("${image.url}")`,
           },
           color: theme => theme.palette[color].dark,
-          pt: `${(600 / 720) * 100}%`,
+          pt: `${(image.height / image.width) * containerWidth}%`,
           position: { sm: 'relative' },
           textAlign: 'center',
           width: '100%',
