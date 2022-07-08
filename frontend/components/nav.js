@@ -11,6 +11,7 @@ import MuiLink from '@mui/material/Link'
 import { getStrapiMedia } from '../lib/media'
 import { ContainedButton } from './button'
 import Typography from '@mui/material/Typography'
+import { alpha } from '@mui/material'
 
 const Nav = ({ menu }) => {
   const [anchorEl, setAnchorEl] = useState(null)
@@ -46,18 +47,20 @@ const Nav = ({ menu }) => {
         </Link>
         <div>
           <IconButton
-            size='large'
+            size='small'
             color='inherit'
             aria-label='menu'
             aria-haspopup='true'
             onClick={handleMenu}
             sx={{
               display: { sm: 'none' },
+              fontSize: '3.2rem',
             }}>
-            {/* TODO: Increase icon size */}
-            <MenuIcon sx={{ color: theme => theme.palette.common.white }} />
+            <MenuIcon
+              fontSize='inherit'
+              sx={{ color: theme => theme.palette.common.white }}
+            />
           </IconButton>
-          {/* TODO: Add sharp corner */}
           <Menu
             id='menu-appbar'
             elevation={2}
@@ -78,11 +81,22 @@ const Nav = ({ menu }) => {
                 display: 'flex',
                 flexDirection: 'column',
                 py: '1.6rem',
+                '&::before': {
+                  backgroundColor: theme => theme.palette.common.white,
+                  clipPath: 'polygon(100% 0, 0% 100%, 100% 100%)',
+                  content: '""',
+                  height: '6rem',
+                  position: 'absolute',
+                  right: 0,
+                  top: '-2rem',
+                  width: '6rem',
+                },
               },
               '& .MuiPaper-root': {
                 borderRadius: 0,
                 mt: '2.4rem',
                 maxWidth: '34.3rem',
+                overflow: 'visible',
                 width: '100%',
               },
             }}>
@@ -129,6 +143,7 @@ const Nav = ({ menu }) => {
                 key={link.id}
                 component='li'
                 onClick={handleClose}
+                neutral
                 sx={{
                   alignSelf: 'center',
                   backgroundColor: theme => theme.palette.common.white,

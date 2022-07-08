@@ -5,7 +5,7 @@ import InstagramIcon from '@mui/icons-material/Instagram'
 import PinterestIcon from '@mui/icons-material/Pinterest'
 import IconButton from '@mui/material/IconButton'
 
-const SocialButton = ({ socialMedia, url }) => {
+const SocialButton = ({ socialMedia, url, sx }) => {
   let icon = ''
   switch (socialMedia) {
     case 'facebook':
@@ -20,7 +20,11 @@ const SocialButton = ({ socialMedia, url }) => {
     default:
       icon = <PinterestIcon fontSize='large' />
   }
-  return <IconButton href={url}>{icon}</IconButton>
+  return (
+    <IconButton href={url} sx={{ ...sx }}>
+      {icon}
+    </IconButton>
+  )
 }
 
 export default SocialButton

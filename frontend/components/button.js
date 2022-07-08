@@ -10,6 +10,10 @@ export const ContainedButton = styled(Button, {
   padding: '1.2rem 2.8rem',
   ...(neutral && {
     backgroundColor: theme.palette.common.white,
+    ':hover': {
+      backgroundColor: alpha(theme.palette.common.white, 0.25),
+      color: theme.palette.common.white,
+    },
   }),
 }))
 

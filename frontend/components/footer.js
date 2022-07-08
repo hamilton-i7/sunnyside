@@ -36,7 +36,12 @@ const Footer = ({ footer }) => {
               variant='body1'
               sx={{
                 color: theme => theme.palette.complementary.dark,
-                cursor: 'pointer',
+                transition: theme =>
+                  `${theme.transitions.duration.shortest}ms cubic-bezier(0.4, 0, 0.2, 1) 0ms`,
+                transitionProperty: 'background-color, color',
+                ':hover': {
+                  color: theme => theme.palette.common.white,
+                },
               }}>
               {link.label}
             </MuiLink>
@@ -49,6 +54,14 @@ const Footer = ({ footer }) => {
             key={social.id}
             socialMedia={social.name}
             url={social.url}
+            sx={{
+              transition: theme =>
+                `${theme.transitions.duration.shortest}ms cubic-bezier(0.4, 0, 0.2, 1) 0ms`,
+              transitionProperty: 'background-color, color',
+              ':hover': {
+                color: theme => theme.palette.common.white,
+              },
+            }}
           />
         ))}
       </Stack>
