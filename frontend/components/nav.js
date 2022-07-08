@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from './link'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
@@ -11,11 +11,15 @@ import MuiLink from '@mui/material/Link'
 import { getStrapiMedia } from '../lib/media'
 import { ContainedButton } from './button'
 import Typography from '@mui/material/Typography'
-import { alpha } from '@mui/material'
+import { useTheme } from '@mui/material'
+import { useSmallScreenMatcher } from '../lib/responsive'
 
 const Nav = ({ menu }) => {
   const [anchorEl, setAnchorEl] = useState(null)
   const logo = getStrapiMedia(menu.logo)
+
+  const theme = useTheme()
+  const matchesSmallScreen = useSmallScreenMatcher(theme)
 
   const handleMenu = event => {
     setAnchorEl(event.currentTarget)
@@ -24,6 +28,12 @@ const Nav = ({ menu }) => {
   const handleClose = () => {
     setAnchorEl(null)
   }
+
+  useEffect(() => {
+    if (matchesSmallScreen) {
+      handleClose()
+    }
+  }, [matchesSmallScreen])
 
   return (
     <AppBar
