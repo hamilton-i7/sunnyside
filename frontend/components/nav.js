@@ -145,7 +145,7 @@ const Nav = ({ menu }) => {
               <MenuItem
                 key={link.id}
                 onClick={handleClose}
-                sx={{ justifyContent: 'center' }}>
+                sx={{ borderRadius: '2.4rem', justifyContent: 'center' }}>
                 <Link href={link.url}>
                   <MuiLink
                     underline='none'

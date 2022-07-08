@@ -53,7 +53,12 @@ const HighlightWithBackground = ({ highlight, theme }) => {
           gap: '2.4rem',
           height: { xs: '60rem', sm: '40rem', lg: '60rem' },
           justifyContent: 'end',
-          padding: { xs: '6rem 3rem', sm: '6rem 2rem', lg: '6rem 12rem' },
+          padding: {
+            xs: '6rem 3rem',
+            sm: '6rem 2rem',
+            lg: '6rem 18%',
+            desktop: '6rem 23%',
+          },
           textAlign: 'center',
         }}>
         <Typography variant='h2'>{title}</Typography>
@@ -99,12 +104,14 @@ const HighlightWithImage = ({ highlight, index, theme }) => {
           sx={{
             alignItems: { xs: 'center', sm: 'start' },
             gap: { xs: '2.4rem', sm: '0.5rem', md: '3rem' },
+            height: '100%',
             justifyContent: 'center',
             padding: {
               xs: '6rem 3rem',
               sm: '2rem 1.6rem',
               md: '6rem 8rem',
-              lg: '10rem 12rem',
+              lg: '10rem 16%',
+              desktop: '10rem 18%',
             },
           }}>
           <Typography

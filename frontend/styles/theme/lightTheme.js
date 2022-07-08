@@ -33,6 +33,9 @@ const lightTheme = createTheme({
       fontSize: '3.6rem',
       fontWeight: 900,
       letterSpacing: '0.5rem',
+      [`@media (min-width:${breakpoints.values.desktop}px)`]: {
+        fontSize: '5.6rem',
+      },
     },
     h2: {
       fontFamily: 'Fraunces',
@@ -47,11 +50,17 @@ const lightTheme = createTheme({
       [`@media (min-width:${breakpoints.values.lg}px)`]: {
         fontSize: '3.6rem',
       },
+      [`@media (min-width:${breakpoints.values.desktop}px)`]: {
+        fontSize: '4.2rem',
+      },
     },
     h3: {
       fontFamily: 'Fraunces',
       fontSize: '1.6rem',
       fontWeight: 900,
+      [`@media (min-width:${breakpoints.values.desktop}px)`]: {
+        fontSize: '2.4rem',
+      },
     },
     body1: {
       fontFamily: 'Barlow',
@@ -60,8 +69,11 @@ const lightTheme = createTheme({
       [`@media (min-width:${breakpoints.values.sm}px)`]: {
         fontSize: '1.4rem',
       },
-      [`@media (min-width:${breakpoints.values.lg}px)`]: {
+      [`@media (min-width:1000px)`]: {
         fontSize: '1.6rem',
+      },
+      [`@media (min-width:${breakpoints.values.lg}px)`]: {
+        fontSize: '1.8rem',
       },
     },
     subtitle1: {

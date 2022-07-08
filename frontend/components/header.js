@@ -11,14 +11,14 @@ const Header = ({ heading, heroImage, icon, menu }) => {
       alignItems='center'
       sx={{
         background: `bottom / cover no-repeat url("${heroImage.url}")`,
-        height: { xs: '44rem', md: '60rem' },
+        height: { xs: '44rem', md: '60rem', desktop: '68rem' },
       }}>
       <Nav menu={menu} />
       <Typography
         variant='h1'
         sx={{
           color: theme => theme.palette.common.white,
-          m: theme => `3rem ${theme.spacing(2)} 4rem`,
+          m: { xs: '3rem 1.6rem 4rem', desktop: '3rem 1.6rem 8rem' },
           textAlign: 'center',
           textTransform: 'uppercase',
         }}>

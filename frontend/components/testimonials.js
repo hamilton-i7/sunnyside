@@ -17,6 +17,7 @@ const Testimonials = ({ heading, testimonials }) => {
           sm: '6rem 12rem',
           md: '6rem 4rem',
           lg: '12rem 8rem',
+          desktop: '12rem 10%',
         },
         textAlign: 'center',
       }}>
