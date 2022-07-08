@@ -10,6 +10,7 @@ const Testimonials = ({ heading, testimonials }) => {
     <Grid
       container
       component='section'
+      role='region'
       columnSpacing={{ xs: 4 }}
       rowSpacing={{ xs: 8, md: 0 }}
       sx={{

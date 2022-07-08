@@ -154,7 +154,7 @@ const Nav = ({ menu }) => {
           sx={{ display: { xs: 'none', sm: 'flex' }, listStyle: 'none' }}>
           {menu.links.map(link =>
             link.variant === 'contained' ? (
-              <ListItem key={link.id} component='li'>
+              <ListItem key={link.id} role='menuitem'>
                 <Link href={link.url}>
                   <ContainedButton
                     onClick={handleClose}
@@ -172,6 +172,7 @@ const Nav = ({ menu }) => {
             ) : (
               <ListItem
                 key={link.id}
+                role='menuitem'
                 onClick={handleClose}
                 sx={{ borderRadius: '2.4rem', justifyContent: 'center' }}>
                 <Link href={link.url}>

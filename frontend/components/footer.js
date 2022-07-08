@@ -34,6 +34,7 @@ const Footer = ({ footer }) => {
             <MuiLink
               underline='none'
               variant='body1'
+              tabIndex={0}
               sx={{
                 color: theme => theme.palette.complementary.dark,
                 transition: theme =>
