@@ -10,8 +10,7 @@ import Menu from '@mui/material/Menu'
 import MuiLink from '@mui/material/Link'
 import { getStrapiMedia } from '../lib/media'
 import { ContainedButton } from './button'
-import Typography from '@mui/material/Typography'
-import { useTheme } from '@mui/material'
+import { List, ListItem, useTheme } from '@mui/material'
 import { useSmallScreenMatcher } from '../lib/responsive'
 
 const Nav = ({ menu }) => {
@@ -73,6 +72,7 @@ const Nav = ({ menu }) => {
           </IconButton>
           <Menu
             id='menu-appbar'
+            role='menu'
             elevation={2}
             anchorEl={anchorEl}
             anchorOrigin={{
@@ -112,21 +112,24 @@ const Nav = ({ menu }) => {
             }}>
             {menu.links.map(link =>
               link.variant === 'contained' ? (
-                <ContainedButton
+                <Box
                   key={link.id}
                   component='li'
-                  onClick={handleClose}
                   sx={{
-                    alignSelf: 'center',
-                    mb: '1.6rem',
-                    mt: '1rem',
+                    textAlign: 'center',
                   }}>
                   <Link href={link.url}>
-                    <Typography component='a' variant='button'>
+                    <ContainedButton
+                      onClick={handleClose}
+                      sx={{
+                        alignSelf: 'center',
+                        mb: '1.6rem',
+                        mt: '1rem',
+                      }}>
                       {link.label}
-                    </Typography>
+                    </ContainedButton>
                   </Link>
-                </ContainedButton>
+                </Box>
               ) : (
                 <MenuItem
                   key={link.id}
@@ -146,28 +149,28 @@ const Nav = ({ menu }) => {
             )}
           </Menu>
         </div>
-        <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
+        <List
+          role='menubar'
+          sx={{ display: { xs: 'none', sm: 'flex' }, listStyle: 'none' }}>
           {menu.links.map(link =>
             link.variant === 'contained' ? (
-              <ContainedButton
-                key={link.id}
-                component='li'
-                onClick={handleClose}
-                neutral
-                sx={{
-                  alignSelf: 'center',
-                  backgroundColor: theme => theme.palette.common.white,
-                  color: theme => theme.palette.tertiary.dark,
-                  ml: '3rem',
-                }}>
+              <ListItem key={link.id} component='li'>
                 <Link href={link.url}>
-                  <Typography component='a' variant='button'>
+                  <ContainedButton
+                    onClick={handleClose}
+                    neutral
+                    sx={{
+                      alignSelf: 'center',
+                      backgroundColor: theme => theme.palette.common.white,
+                      color: theme => theme.palette.tertiary.dark,
+                      ml: '3rem',
+                    }}>
                     {link.label}
-                  </Typography>
+                  </ContainedButton>
                 </Link>
-              </ContainedButton>
+              </ListItem>
             ) : (
-              <MenuItem
+              <ListItem
                 key={link.id}
                 onClick={handleClose}
                 sx={{ borderRadius: '2.4rem', justifyContent: 'center' }}>
@@ -180,10 +183,10 @@ const Nav = ({ menu }) => {
                     {link.label}
                   </MuiLink>
                 </Link>
-              </MenuItem>
+              </ListItem>
             ),
           )}
-        </Box>
+        </List>
       </Toolbar>
     </AppBar>
   )

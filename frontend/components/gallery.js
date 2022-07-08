@@ -5,7 +5,7 @@ import { getStrapiMedia } from '../lib/media'
 
 const Gallery = ({ images }) => {
   return (
-    <Grid container>
+    <Grid container role='complementary'>
       {images.map(image => {
         const imageObj = getStrapiMedia(image, true)
         return (

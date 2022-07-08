@@ -25,6 +25,7 @@ const Testimonials = ({ heading, testimonials }) => {
       <Grid
         item
         xs={12}
+        component='header'
         sx={{
           mb: { xs: '2rem', md: '6rem' },
         }}>
