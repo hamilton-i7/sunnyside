@@ -98,9 +98,9 @@ const HighlightWithImage = ({ highlight, index, theme }) => {
         <Stack
           sx={{
             alignItems: { xs: 'center', sm: 'start' },
-            gap: { xs: '2.4rem', sm: '0.5rem' },
+            gap: { xs: '2.4rem', sm: '0.5rem', md: '3rem' },
             justifyContent: 'center',
-            padding: { xs: '6rem 3rem', sm: '2rem 1.6rem' },
+            padding: { xs: '6rem 3rem', sm: '2rem 1.6rem', md: '6rem 8rem' },
           }}>
           <Typography
             variant='h2'

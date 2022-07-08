@@ -11,7 +11,7 @@ const Header = ({ heading, heroImage, icon, menu }) => {
       alignItems='center'
       sx={{
         background: `bottom / cover no-repeat url("${heroImage.url}")`,
-        height: '44rem',
+        height: { xs: '44rem', md: '60rem' },
       }}>
       <Nav menu={menu} />
       <Typography

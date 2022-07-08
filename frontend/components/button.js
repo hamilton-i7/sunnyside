@@ -17,7 +17,7 @@ export const TextButton = styled(Button, {
   shouldForwardProp: prop => prop !== 'underlineColor',
 })(({ underlineColor, theme }) => ({
   color: theme.palette.tertiary.dark,
-  fontSize: { xs: '1.6rem', sm: '1.2rem' },
+  fontSize: '1.4rem',
   '&::after': {
     borderRadius: '0.8rem',
     bottom: '0.5em',
@@ -43,5 +43,3 @@ export const TextButton = styled(Button, {
     },
   }),
 }))
-
-export const LinkButton = styled(Button)(({ theme }) => ({}))

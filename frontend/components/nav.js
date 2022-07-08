@@ -132,6 +132,7 @@ const Nav = ({ menu }) => {
                   alignSelf: 'center',
                   backgroundColor: theme => theme.palette.common.white,
                   color: theme => theme.palette.tertiary.dark,
+                  ml: '3rem',
                 }}>
                 <Link href={link.url}>
                   <Typography component='a' variant='button'>

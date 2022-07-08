@@ -1,39 +1,48 @@
 import React from 'react'
 import Stack from '@mui/material/Stack'
+import Grid from '@mui/material/Grid'
 import Avatar from '@mui/material/Avatar'
 import Typography from '@mui/material/Typography'
 import { getStrapiMedia } from '../lib/media'
 
 const Testimonials = ({ heading, testimonials }) => {
   return (
-    <Stack
+    <Grid
+      container
       component='section'
+      spacing={{ xs: 4 }}
       sx={{
-        gap: '4rem',
-        padding: '6rem 12rem',
+        padding: { xs: '6rem 2rem', sm: '6rem 12rem', md: '6rem 4rem' },
         textAlign: 'center',
       }}>
-      <Typography
-        component='h2'
-        variant='h3'
+      <Grid
+        item
+        xs={12}
         sx={{
-          color: theme => theme.palette.neutral.grayishBlue,
-          letterSpacing: '0.5rem',
-          mb: '1rem',
-          textTransform: 'uppercase',
+          mb: { xs: '2rem', md: '6rem' },
         }}>
-        {heading}
-      </Typography>
+        <Typography
+          component='h2'
+          variant='h3'
+          sx={{
+            color: theme => theme.palette.neutral.grayishBlue,
+            letterSpacing: '0.5rem',
+            textTransform: 'uppercase',
+          }}>
+          {heading}
+        </Typography>
+      </Grid>
       {testimonials.map(testimony => (
-        <Testimony
-          key={testimony.id}
-          image={getStrapiMedia(testimony.image)}
-          testimony={testimony.testimony}
-          author={testimony.author}
-          position={testimony.position}
-        />
+        <Grid key={testimony.id} item xs={12} md={4}>
+          <Testimony
+            image={getStrapiMedia(testimony.image)}
+            testimony={testimony.testimony}
+            author={testimony.author}
+            position={testimony.position}
+          />
+        </Grid>
       ))}
-    </Stack>
+    </Grid>
   )
 }
 
