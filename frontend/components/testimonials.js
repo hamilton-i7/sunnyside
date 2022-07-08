@@ -11,6 +11,7 @@ const Testimonials = ({ heading, testimonials }) => {
       container
       component='section'
       columnSpacing={{ xs: 4 }}
+      rowSpacing={{ xs: 8, md: 0 }}
       sx={{
         padding: {
           xs: '6rem 2rem',
@@ -67,7 +68,7 @@ const Testimony = ({ image, testimony, author, position }) => {
         component='p'
         sx={{
           color: theme => theme.palette.neutral.veryDarkGrayishBlue,
-          my: '3rem',
+          my: '2rem',
         }}>
         {testimony}
       </Typography>
