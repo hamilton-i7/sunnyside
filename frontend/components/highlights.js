@@ -45,35 +45,52 @@ const HighlightWithBackground = ({ highlight, theme }) => {
 
   return (
     <Grid item xs={12} sm={6}>
-      <Stack
+      <Box
         sx={{
           alignItems: 'center',
-          background: `center / cover no-repeat url("${image.url}")`,
-          color: theme => theme.palette[color].dark,
-          gap: '2.4rem',
-          height: { xs: '60rem', sm: '40rem', lg: '60rem' },
-          justifyContent: 'end',
-          padding: {
-            xs: '6rem 3rem',
-            sm: '6rem 2rem',
-            lg: '6rem 18%',
-            desktop: '6rem 23%',
+          background: {
+            xs: `center / cover no-repeat url("${image.url}")`,
+            sm: `center / contain no-repeat url("${image.url}")`,
           },
+          color: theme => theme.palette[color].dark,
+          pt: `${(600 / 720) * 100}%`,
+          position: { sm: 'relative' },
           textAlign: 'center',
+          width: '100%',
         }}>
-        <Typography variant='h2'>{title}</Typography>
-        <Typography
-          variant='body1'
-          component='p'
+        <Stack
           sx={{
-            display: '-webkit-box',
-            overflow: 'hidden',
-            WebkitBoxOrient: 'vertical',
-            WebkitLineClamp: 3,
+            gap: '2.4rem',
+            px: {
+              xs: '3rem',
+              sm: '2rem',
+              lg: '18%',
+              desktop: '23%',
+            },
+            py: '6rem',
+            [theme.breakpoints.up('sm')]: {
+              position: 'absolute',
+              py: 0,
+              left: '50%',
+              top: '70%',
+              transform: 'translate(-50%, -50%)',
+              width: '100%',
+            },
           }}>
-          {description}
-        </Typography>
-      </Stack>
+          <Typography variant='h2'>{title}</Typography>
+          <Typography
+            variant='body1'
+            component='p'
+            sx={{
+              display: '-webkit-box',
+              overflow: 'hidden',
+              WebkitBoxOrient: 'vertical',
+              WebkitLineClamp: 3,
+            }}>
+            {description}
+          </Typography>
+        </Stack>
+      </Box>
     </Grid>
   )
 }

@@ -20,6 +20,7 @@ const Home = ({ content }) => {
     highlights,
     clientTestimonials,
     galleryMobile,
+    galleryDesktop,
     footer,
   } = content.attributes
   const heroMobile = getStrapiMedia(heroImageMobile)
@@ -43,7 +44,9 @@ const Home = ({ content }) => {
         heading={clientTestimonials.heading}
         testimonials={clientTestimonials.testimonies}
       />
-      <Gallery images={galleryMobile.data} />
+      <Gallery
+        images={matchesSmallScreen ? galleryDesktop.data : galleryMobile.data}
+      />
       <Footer footer={footer} />
     </>
   )
