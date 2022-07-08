@@ -10,9 +10,14 @@ const Testimonials = ({ heading, testimonials }) => {
     <Grid
       container
       component='section'
-      spacing={{ xs: 4 }}
+      columnSpacing={{ xs: 4 }}
       sx={{
-        padding: { xs: '6rem 2rem', sm: '6rem 12rem', md: '6rem 4rem' },
+        padding: {
+          xs: '6rem 2rem',
+          sm: '6rem 12rem',
+          md: '6rem 4rem',
+          lg: '12rem 8rem',
+        },
         textAlign: 'center',
       }}>
       <Grid

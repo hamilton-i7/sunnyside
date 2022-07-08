@@ -44,6 +44,9 @@ const lightTheme = createTheme({
       [`@media (min-width:${breakpoints.values.md}px)`]: {
         fontSize: '3rem',
       },
+      [`@media (min-width:${breakpoints.values.lg}px)`]: {
+        fontSize: '3.6rem',
+      },
     },
     h3: {
       fontFamily: 'Fraunces',
@@ -56,6 +59,9 @@ const lightTheme = createTheme({
       fontSize: '1.6rem',
       [`@media (min-width:${breakpoints.values.sm}px)`]: {
         fontSize: '1.4rem',
+      },
+      [`@media (min-width:${breakpoints.values.lg}px)`]: {
+        fontSize: '1.6rem',
       },
     },
     subtitle1: {

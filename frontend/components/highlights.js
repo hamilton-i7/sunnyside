@@ -51,9 +51,9 @@ const HighlightWithBackground = ({ highlight, theme }) => {
           background: `center / cover no-repeat url("${image.url}")`,
           color: theme => theme.palette[color].dark,
           gap: '2.4rem',
-          height: { xs: '60rem', sm: '40rem' },
+          height: { xs: '60rem', sm: '40rem', lg: '60rem' },
           justifyContent: 'end',
-          padding: { xs: '6rem 3rem', sm: '6rem 2rem' },
+          padding: { xs: '6rem 3rem', sm: '6rem 2rem', lg: '6rem 12rem' },
           textAlign: 'center',
         }}>
         <Typography variant='h2'>{title}</Typography>
@@ -100,7 +100,12 @@ const HighlightWithImage = ({ highlight, index, theme }) => {
             alignItems: { xs: 'center', sm: 'start' },
             gap: { xs: '2.4rem', sm: '0.5rem', md: '3rem' },
             justifyContent: 'center',
-            padding: { xs: '6rem 3rem', sm: '2rem 1.6rem', md: '6rem 8rem' },
+            padding: {
+              xs: '6rem 3rem',
+              sm: '2rem 1.6rem',
+              md: '6rem 8rem',
+              lg: '10rem 12rem',
+            },
           }}>
           <Typography
             variant='h2'

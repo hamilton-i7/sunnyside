@@ -33,6 +33,7 @@ const Nav = ({ menu }) => {
       <Toolbar
         sx={{
           justifyContent: 'space-between',
+          minHeight: { md: '8rem' },
         }}>
         <Link href='#'>
           <MuiLink
